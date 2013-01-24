@@ -1,0 +1,11 @@
+## Fichero de configuración de gsch2pcb
+
+# Nombre de los esquemáticos
+schematics ATMega328.sch
+
+# Nombre del fichero de salida
+output-name WheelieCar
+
+# Directorios donde buscar los footprints propios
+#elements-dir gEDA/pcb-elements
+elements-dir gEDA/pcb-elements

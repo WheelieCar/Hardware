@@ -1,0 +1,4 @@
+;; Fichero de configuración de gEDA
+
+;; Componentes propios
+(component-library "${PWD}/gEDA/gschem-sym")
