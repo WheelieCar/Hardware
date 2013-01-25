@@ -5,6 +5,7 @@ SCHEMATICS = ATMega328.sch
 PCB_PAGES = P3 P9 P11R
 PCB_ACTIONS = LoadFrom(LayoutToBuffer, $(PROJECT).new.pcb); \
 	      PasteBuffer(ToLayout, 0, 0, mil) \
+	      DisperseElements(All) \
 	      ExecuteFile($(PROJECT).cmd) \
 	      LoadFrom(Netlist, $(PROJECT).net)
 
