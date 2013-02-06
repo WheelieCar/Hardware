@@ -3,10 +3,10 @@
 # To read pcb files, the pcb version (or the git source date) must be >= the file version
 FileVersion[20070407]
 
-PCB["WheelieCar" 600000 500000]
+PCB["WheelieCar" 102000 149000]
 
-Grid[5000.0 0 0 0]
-Cursor[5000 15000 0.000000]
+Grid[1000.0 0 0 1]
+Cursor[0 149000 0.000000]
 PolyArea[200000000.000000]
 Thermal[0.500000]
 DRC[1000 1000 1000 1000 2000 1000]
@@ -786,11 +786,239 @@ Symbol['~' 1200]
 	SymbolLine[1500 3500 2000 3500 800]
 	SymbolLine[2000 3500 2500 3000 800]
 )
-
 Attribute("PCB::grid::unit" "mil")
 
+Element["onsolder" "bluetooth-HC05" "U1" "unknown" 27238 119944 25000 -30000 0 100 "auto"]
+(
+	Pad[0 0 1543 0 4500 2000 2500 "TXD" "1" "onsolder,square"]
+	Pad[0 -5906 1543 -5906 4500 2000 2500 "RDX" "2" "onsolder,square"]
+	Pad[0 -11812 1543 -11812 4500 2000 2500 "CTS" "3" "onsolder,square"]
+	Pad[0 -17718 1543 -17718 4500 2000 2500 "RTS" "4" "onsolder,square"]
+	Pad[0 -23624 1543 -23624 4500 2000 2500 "PCM_CLK" "5" "onsolder,square"]
+	Pad[0 -29530 1543 -29530 4500 2000 2500 "PCM_OUT" "6" "onsolder,square"]
+	Pad[0 -35436 1543 -35436 4500 2000 2500 "PCM_IN" "7" "onsolder,square"]
+	Pad[0 -41342 1543 -41342 4500 2000 2500 "PCM_SYNC" "8" "onsolder,square"]
+	Pad[0 -47248 1543 -47248 4500 2000 2500 "AIO0" "9" "onsolder,square"]
+	Pad[0 -53154 1543 -53154 4500 2000 2500 "AIO1" "10" "onsolder,square"]
+	Pad[0 -59060 1543 -59060 4500 2000 2500 "RESET" "11" "onsolder,square"]
+	Pad[0 -64966 1543 -64966 4500 2000 2500 "VCC 3.3V" "12" "onsolder,square"]
+	Pad[0 -70872 1543 -70872 4500 2000 2500 "GND" "13" "onsolder,square"]
+	Pad[5000 -77953 5000 -76410 4500 2000 2500 "NC" "14" "onsolder,square"]
+	Pad[10906 -77953 10906 -76410 4500 2000 2500 "USB_D-" "15" "onsolder,square"]
+	Pad[16812 -77953 16812 -76410 4500 2000 2500 "CSB" "16" "onsolder,square"]
+	Pad[22718 -77953 22718 -76410 4500 2000 2500 "MOSI" "17" "onsolder,square"]
+	Pad[28624 -77953 28624 -76410 4500 2000 2500 "MISO" "18" "onsolder,square"]
+	Pad[34530 -77953 34530 -76410 4500 2000 2500 "CLK" "19" "onsolder,square"]
+	Pad[40436 -77953 40436 -76410 4500 2000 2500 "USB_D+" "20" "onsolder,square"]
+	Pad[46342 -77953 46342 -76410 4500 2000 2500 "GND" "21" "onsolder,square"]
+	Pad[49431 0 51181 0 4500 2000 2500 "PIO11" "34" "onsolder,square,edge2"]
+	Pad[49431 -5906 51181 -5906 4500 2000 2500 "PIO10" "33" "onsolder,square,edge2"]
+	Pad[49431 -11812 51181 -11812 4500 2000 2500 "PIO9" "32" "onsolder,square,edge2"]
+	Pad[49431 -17718 51181 -17718 4500 2000 2500 "PIO8" "31" "onsolder,square,edge2"]
+	Pad[49431 -23624 51181 -23624 4500 2000 2500 "PIO7" "30" "onsolder,square,edge2"]
+	Pad[49431 -29530 51181 -29530 4500 2000 2500 "PIO6" "29" "onsolder,square,edge2"]
+	Pad[49431 -35436 51181 -35436 4500 2000 2500 "PIO5" "28" "onsolder,square,edge2"]
+	Pad[49431 -41342 51181 -41342 4500 2000 2500 "PIO4" "27" "onsolder,square,edge2"]
+	Pad[49431 -47248 51181 -47248 4500 2000 2500 "PIO3" "26" "onsolder,square,edge2"]
+	Pad[49431 -53154 51181 -53154 4500 2000 2500 "PIO2" "25" "onsolder,square,edge2"]
+	Pad[49431 -59060 51181 -59060 4500 2000 2500 "PIO1" "24" "onsolder,square,edge2"]
+	Pad[49431 -64966 51181 -64966 4500 2000 2500 "PIO0" "23" "onsolder,square,edge2"]
+	Pad[49431 -70872 51181 -70872 4500 2000 2500 "GND" "22" "onsolder,square,edge2"]
+	ElementLine [0 0 0 27953 1500]
+	ElementLine [0 27953 51181 27953 1500]
+	ElementLine [51181 27953 51181 0 1500]
+	ElementLine [0 -70906 0 -77953 1500]
+	ElementLine [0 -77953 5000 -77953 1500]
+	ElementLine [46063 -77953 51181 -77953 1500]
+	ElementLine [51181 -77953 51181 -70906 1500]
+
+	)
+
+Element["" "LED3" "D2" "unknown" 91544 16602 -7000 5000 3 100 ""]
+(
+	Pin[0 -5000 6500 3000 7100 4300 "CATHODE" "1" "square,thermal(0X)"]
+	Pin[0 5000 6500 3000 7100 4300 "ANODE" "2" ""]
+	ElementArc [0 0 5900 5900 315 90 1000]
+	ElementArc [0 0 5900 5900 135 90 1000]
+	ElementArc [0 0 7900 7900 315 90 1000]
+	ElementArc [0 0 7900 7900 135 90 1000]
+
+	)
+
+Element["" "LED3" "D3" "unknown" 91544 37602 -8000 2000 3 100 ""]
+(
+	Pin[0 -5000 6500 3000 7100 4300 "CATHODE" "1" "square,thermal(0X)"]
+	Pin[0 5000 6500 3000 7100 4300 "ANODE" "2" ""]
+	ElementArc [0 0 5900 5900 315 90 1000]
+	ElementArc [0 0 5900 5900 135 90 1000]
+	ElementArc [0 0 7900 7900 315 90 1000]
+	ElementArc [0 0 7900 7900 135 90 1000]
+
+	)
+
+Element["" "ACY400" "R5" "10K" 72544 29602 -17000 2700 2 100 ""]
+(
+	Pin[0 0 5500 3000 6100 3000 "1" "1" "square,edge2"]
+	Pin[-40000 0 5500 3000 6100 3000 "2" "2" "edge2"]
+	ElementLine [-10000 0 0 0 1000]
+	ElementLine [-40000 0 -30000 0 1000]
+	ElementLine [-30000 3300 -10000 3300 1000]
+	ElementLine [-30000 -3300 -30000 3300 1000]
+	ElementLine [-30000 -3300 -10000 -3300 1000]
+	ElementLine [-10000 -3300 -10000 3300 1000]
+
+	)
+
+Element["" "ACY400" "R6" "15K" 14544 86602 -9700 -17000 1 100 ""]
+(
+	Pin[0 0 5500 3000 6100 3000 "1" "1" "square"]
+	Pin[0 -40000 5500 3000 6100 3000 "2" "2" "thermal(0X)"]
+	ElementLine [0 -10000 0 0 1000]
+	ElementLine [0 -40000 0 -30000 1000]
+	ElementLine [-3300 -30000 -3300 -10000 1000]
+	ElementLine [-3300 -30000 3300 -30000 1000]
+	ElementLine [3300 -30000 3300 -10000 1000]
+	ElementLine [-3300 -10000 3300 -10000 1000]
+
+	)
+
+Element["" "ACY400" "R3" "180" 91544 93602 -2700 -18000 1 100 ""]
+(
+	Pin[0 0 5500 3000 6100 3000 "1" "1" "square"]
+	Pin[0 -40000 5500 3000 6100 3000 "2" "2" ""]
+	ElementLine [0 -10000 0 0 1000]
+	ElementLine [0 -40000 0 -30000 1000]
+	ElementLine [-3300 -30000 -3300 -10000 1000]
+	ElementLine [-3300 -30000 3300 -30000 1000]
+	ElementLine [3300 -30000 3300 -10000 1000]
+	ElementLine [-3300 -10000 3300 -10000 1000]
+
+	)
+
+Element["" "ACY400" "R4" "10" 14544 97602 2700 15000 3 100 ""]
+(
+	Pin[0 0 5500 3000 6100 3000 "1" "1" "square"]
+	Pin[0 40000 5500 3000 6100 3000 "2" "2" ""]
+	ElementLine [0 0 0 10000 1000]
+	ElementLine [0 30000 0 40000 1000]
+	ElementLine [3300 10000 3300 30000 1000]
+	ElementLine [-3300 30000 3300 30000 1000]
+	ElementLine [-3300 10000 -3300 30000 1000]
+	ElementLine [-3300 10000 3300 10000 1000]
+
+	)
+
+Element["" "ACY400" "R2" "180" 91544 143602 -2700 -18000 1 100 ""]
+(
+	Pin[0 0 5500 3000 6100 3000 "1" "1" "square"]
+	Pin[0 -40000 5500 3000 6100 3000 "2" "2" ""]
+	ElementLine [0 -10000 0 0 1000]
+	ElementLine [0 -40000 0 -30000 1000]
+	ElementLine [-3300 -30000 -3300 -10000 1000]
+	ElementLine [-3300 -30000 3300 -30000 1000]
+	ElementLine [3300 -30000 3300 -10000 1000]
+	ElementLine [-3300 -10000 3300 -10000 1000]
+
+	)
+
+Element["" "Jumper, i.e. single row headers" "" "JUMPER4" 37544 11602 -5000 -11000 0 100 ""]
+(
+	Pin[0 0 6000 3000 6600 3800 "1" "1" "square,warn,edge2"]
+	Pin[10000 0 6000 3000 6600 3800 "2" "2" "warn,edge2"]
+	Pin[20000 0 6000 3000 6600 3800 "3" "3" "warn,edge2"]
+	Pin[30000 0 6000 3000 6600 3800 "4" "4" "warn,edge2,thermal(0X)"]
+	ElementLine [-5000 5000 35000 5000 1000]
+	ElementLine [35000 -5000 35000 5000 1000]
+	ElementLine [-5000 -5000 35000 -5000 1000]
+	ElementLine [-5000 -5000 -5000 5000 1000]
+	ElementLine [5000 -5000 5000 5000 1000]
+	ElementLine [-5000 -5000 5000 -5000 1000]
+
+	)
 Layer(1 "cobre")
 (
+	Line[77544 108132 83074 108132 1500 2000 "clearline"]
+	Line[83074 108132 84544 109602 1500 2000 "clearline"]
+	Line[84544 109602 84544 141602 1500 2000 "clearline"]
+	Line[84544 141602 86544 143602 1500 2000 "clearline"]
+	Line[86544 143602 91544 143602 1500 2000 "clearline"]
+	Line[77544 102226 82920 102226 1500 2000 "clearline"]
+	Line[82920 102226 84544 100602 1500 2000 "clearline"]
+	Line[84544 100602 84544 95602 1500 2000 "clearline"]
+	Line[84544 95602 86544 93602 1500 2000 "clearline"]
+	Line[86544 93602 91544 93602 1500 2000 "clearline"]
+	Line[91544 53602 91544 42602 1500 2000 "clearline"]
+	Line[91544 103602 95544 103602 1500 2000 "clearline"]
+	Line[95544 103602 98544 100602 1500 2000 "clearline"]
+	Line[98544 100602 98544 28602 1500 2000 "clearline"]
+	Line[98544 28602 91544 21602 1500 2000 "clearline"]
+	Line[28010 119944 23202 119944 1500 2000 "clearline"]
+	Line[23202 119944 20544 122602 1500 2000 "clearline"]
+	Line[20544 122602 20544 134602 1500 2000 "clearline"]
+	Line[20544 134602 17544 137602 1500 2000 "clearline"]
+	Line[17544 137602 14544 137602 1500 2000 "clearline"]
+	Line[14544 86602 19544 86602 1500 2000 "clearline"]
+	Line[19544 86602 21544 88602 1500 2000 "clearline"]
+	Line[28010 114038 23980 114038 1500 2000 "clearline"]
+	Line[23980 114038 21544 111602 1500 2000 "clearline"]
+	Line[21544 111602 21544 88602 1500 2000 "clearline"]
+	Line[57544 11602 57544 18602 1500 2000 "clearline"]
+	Line[57544 18602 59544 20602 1500 2000 "clearline"]
+	Line[59544 20602 70544 20602 1500 2000 "clearline"]
+	Line[70544 20602 72544 22602 1500 2000 "clearline"]
+	Line[72544 22602 72544 29602 1500 2000 "clearline"]
+	Line[28010 54978 22920 54978 2000 2000 "clearline"]
+	Line[22920 54978 21544 53602 2000 2000 "clearline"]
+	Line[21544 53602 21544 39602 2000 2000 "clearline"]
+	Line[21544 39602 24544 36602 2000 2000 "clearline"]
+	Line[24544 36602 36544 36602 2000 2000 "clearline"]
+	Line[36544 36602 40544 32602 2000 2000 "clearline"]
+	Line[40544 32602 40544 23602 2000 2000 "clearline"]
+	Line[40544 23602 37544 20602 2000 2000 "clearline"]
+	Line[37544 20602 37544 11602 2000 2000 "clearline"]
+	Line[14544 86602 14544 56602 2000 2000 "clearline"]
+	Line[7544 49602 14544 56602 2000 2000 "clearline"]
+	Line[7544 49602 7544 43602 2000 2000 "clearline"]
+	Line[7544 43602 21544 29602 2000 2000 "clearline"]
+	Line[21544 29602 32544 29602 2000 2000 "clearline"]
+	Line[47544 11602 47544 7602 2000 2000 "clearline"]
+	Line[47544 7602 44544 4602 2000 2000 "clearline"]
+	Line[44544 4602 32544 4602 2000 2000 "clearline"]
+	Line[32544 4602 3544 33602 2000 2000 "clearline"]
+	Line[3544 33602 3544 93602 2000 2000 "clearline"]
+	Line[3544 93602 7544 97602 2000 2000 "clearline"]
+	Line[7544 97602 14544 97602 2000 2000 "clearline"]
+	Line[47544 17602 47544 20602 2000 2000 "clearline"]
+	Line[44544 21602 50544 21602 2000 2000 "clearline"]
+	Line[55544 5602 55544 2602 2000 2000 "clearline"]
+	Line[55544 5602 57544 5602 2000 2000 "clearline"]
+	Line[57544 5602 56544 4602 2000 2000 "clearline"]
+	Line[56544 4602 58544 2602 2000 2000 "clearline"]
+	Line[58544 5602 55544 5602 2000 2000 "clearline"]
+	Line[77544 13602 75544 13602 2000 2000 "clearline"]
+	Line[75544 13602 74544 12602 2000 2000 "clearline"]
+	Line[74544 12602 74544 9602 2000 2000 "clearline"]
+	Line[74544 9602 75544 8602 2000 2000 "clearline"]
+	Line[75544 8602 77544 8602 2000 2000 "clearline"]
+	Line[77544 8602 78544 9602 2000 2000 "clearline"]
+	Line[80544 10602 77544 10602 2000 2000 "clearline"]
+	Line[30544 15602 33544 18602 2000 2000 "clearline"]
+	Line[30544 15602 27544 18602 2000 2000 "clearline"]
+	Line[28010 49072 77544 49072 2000 2000 "clearline"]
+	Polygon("")
+	(
+		[23544 50602] [28544 50602] [28544 45602] [23544 45602] 
+	)
+	Polygon("")
+	(
+		[75000 51000] [75000 45000] [72000 45000] [72000 36000] [84000 36000] 
+		[84000 51000] 
+	)
+	Polygon("clearpoly")
+	(
+		[0 149000] [0 0] [102000 0] [102000 149000] [83000 149000] 
+		[83000 38000] [23000 38000] [23000 149000] 
+	)
 )
 Layer(2 "componentes")
 (
@@ -800,4 +1028,63 @@ Layer(3 "silk")
 )
 Layer(4 "silk")
 (
+)
+NetList()
+(
+	Net("GND" "(unknown)")
+	(
+		Connect("D2-1")
+		Connect("D3-1")
+		Connect("R6-2")
+		Connect("U1-13")
+		Connect("U1-21")
+		Connect("U1-22")
+	)
+	Net("Rx" "(unknown)")
+	(
+		Connect("R5-1")
+	)
+	Net("Tx" "(unknown)")
+	(
+		Connect("R4-1")
+	)
+	Net("unnamed_net1" "(unknown)")
+	(
+		Connect("R2-1")
+		Connect("U1-32")
+	)
+	Net("unnamed_net2" "(unknown)")
+	(
+		Connect("R3-1")
+		Connect("U1-31")
+	)
+	Net("unnamed_net3" "(unknown)")
+	(
+		Connect("R4-2")
+		Connect("U1-1")
+	)
+	Net("unnamed_net4" "(unknown)")
+	(
+		Connect("R5-2")
+		Connect("R6-1")
+		Connect("U1-2")
+	)
+	Net("unnamed_net5" "(unknown)")
+	(
+		Connect("U1-11")
+	)
+	Net("unnamed_net6" "(unknown)")
+	(
+		Connect("U1-12")
+	)
+	Net("unnamed_net7" "(unknown)")
+	(
+		Connect("D3-2")
+		Connect("R3-2")
+	)
+	Net("unnamed_net8" "(unknown)")
+	(
+		Connect("D2-2")
+		Connect("R2-2")
+	)
 )
