@@ -1,18 +1,17 @@
-PROJECT = WheelieCar
+PROJECT = Bluetooth
 
-SCHEMATICS = ATMega328.sch
+SCHEMATICS = Bluetooth.sch
 
-PCB_PAGES = P3 P9 P11R
 PCB_ACTIONS = LoadFrom(LayoutToBuffer, $(PROJECT).new.pcb); \
 	      PasteBuffer(ToLayout, 0, 0, mil) \
 	      DisperseElements(All) \
 	      ExecuteFile($(PROJECT).cmd) \
 	      LoadFrom(Netlist, $(PROJECT).net)
 
-SCHEMS_PS := $(SCHEMATICS:.sch=.ps)
-SCHEMS_PDF := $(SCHEMATICS:.sch=.pdf)
+SCHEMS_PS := $(SCHEMATICS:.sch=-SCH.ps)
+SCHEMS_PDF := $(SCHEMATICS:.sch=-SCH.pdf)
 
-.PHONY: updatepcb bluetooth pdfs clean
+.PHONY: updatepcb pdfs clean
 
 all: updatepcb
 
@@ -26,7 +25,7 @@ updatepcb: $(PROJECT).pcb
 $(PROJECT).pcb: $(SCHEMATICS)
 	@echo -e "\n*** Comprobando si hay que actualizar $(PROJECT).pcb ***"
 
-	@make $(PROJECT).pcb.new
+	@make -f makefile.bluetooth $(PROJECT).pcb.new
 
 	@#Si se ha editado el .sch, pero no hace falta cambiar el .pcb:
 	@if [ ! -e $(PROJECT).new.pcb ]; then \
@@ -44,7 +43,7 @@ $(PROJECT).pcb: $(SCHEMATICS)
 ## Los nombres de los esquemáticos han de estar definidos en gsch2pcbrc
 $(PROJECT).pcb.new: $(SCHEMATICS)
 	@echo -e "\n*** Generando $(PROJECT).pcb.new a partir de los esquemáticos ***"
-	gsch2pcb -v gsch2pcbrc
+	gsch2pcb -v gsch2pcbrc.bluetooth
 
 ####################################
 ### REGLAS PARA GENERAR LOS PDFs ###
@@ -93,19 +92,6 @@ $(SCHEMS_PDF): $(SCHEMATICS)
 	done
 
 
-################
-### Bluetooth ##
-################
-## Llama al makefile que se encarga de contruir los pdfs y generar el pcb del
-## módulo bluetooth
-bluetooth:
-	@echo -e "\n*** LLamando al makefile de Bluetooth ***"
-	@make -f makefile.bluetooth
-
-
-#############
-### Clean ###
-#############
 clean:
 	@echo -e "\n*** Limpiando ***"
 
@@ -117,6 +103,3 @@ clean:
 	@rm -fv $(PROJECT).net
 	@rm -fv $(PROJECT).cmd
 	@rm -fv $(PROJECT).new.pcb
-
-	@echo -e "\n*** Llamando a clan de Bluetooth ***"
-	@make -f makefile.bluetooth clean
