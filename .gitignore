@@ -5,6 +5,7 @@
 *.bak
 *-
 *.new.pcb
+\#*\#
 
 ## Archivos PS y PDF
 *.ps
