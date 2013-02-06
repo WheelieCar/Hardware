@@ -2,6 +2,7 @@ PROJECT = Bluetooth
 
 SCHEMATICS = Bluetooth.sch
 
+PCB_PAGES = P2 P10 P12
 PCB_ACTIONS = LoadFrom(LayoutToBuffer, $(PROJECT).new.pcb); \
 	      PasteBuffer(ToLayout, 0, 0, mil) \
 	      DisperseElements(All) \
