@@ -1,7 +1,7 @@
 ## Fichero de configuración de gsch2pcb
 
 # Nombre de los esquemáticos
-schematics ATMega328.sch
+schematics ATMega328.sch Power.sch
 
 # Nombre del fichero de salida
 output-name WheelieCar
