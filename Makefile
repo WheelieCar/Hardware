@@ -13,7 +13,7 @@ PCB_ACTIONS = LoadFrom(LayoutToBuffer, $(PROJECT).new.pcb); \
 SCHEMS_PS := $(SCHEMATICS:.sch=.ps)
 SCHEMS_PDF := $(SCHEMATICS:.sch=.pdf)
 
-.PHONY: updatepcb bluetooth pdfs clean
+.PHONY: updatepcb bluetooth bluetooth-pdf pdfs clean
 
 all: updatepcb
 
@@ -50,7 +50,7 @@ $(PROJECT).pcb.new: $(SCHEMATICS)
 ####################################
 ### REGLAS PARA GENERAR LOS PDFs ###
 ####################################
-pdfs: $(PROJECT).pdf
+pdfs: $(PROJECT).pdf bluetooth-pdf
 
 
 ## Une los pdfs de los esquemáticos con el de la PCB
@@ -95,11 +95,15 @@ $(PROJECT)-PCB.pdf: $(PROJECT).pcb
 ################
 ### Bluetooth ##
 ################
-## Llama al makefile que se encarga de contruir los pdfs y generar el pcb del
-## módulo bluetooth
+## Llama al makefile que se encarga de generar el pcb del módulo bluetooth
 bluetooth:
 	@echo -e "\n*** LLamando al makefile de Bluetooth ***"
 	@make -f makefile.bluetooth
+
+## Llama al makefile que se encarga de generar los pdfs del módulo bluetooth
+bluetooth-pdf: 
+	@echo -e "\n*** LLamando al makefile de Bluetooth ***"
+	@make -f makefile.bluetooth pdfs
 
 
 #############
