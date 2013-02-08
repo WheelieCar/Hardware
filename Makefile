@@ -1,6 +1,7 @@
 PROJECT = WheelieCar
 
-SCHEMATICS = ATMega328.sch
+SCHEMATICS = ATMega328.sch \
+	     Power.sch
 
 PCB_PAGES = P3 P9 P11R
 PCB_ACTIONS = LoadFrom(LayoutToBuffer, $(PROJECT).new.pcb); \
@@ -79,18 +80,16 @@ $(PROJECT)-PCB.pdf: $(PROJECT).pcb
 
 
 ## Convertimos todos los PS a PDF o pide que se creen si no existen
-$(SCHEMS_PDF): $(SCHEMATICS)
-	@for schem_ps in $(SCHEMS_PS); do \
-		echo -e "\n*** Convirtiendo $$schem_ps a pdf ***"; \
-		\
-		if [ -e "$$schem_ps" ];then \
-			ps2pdf -sPAPERSIZE=a4 $$schem_ps; \
-			rm $$schem_ps; \
-		else \
-			echo -e "** ACTUALIZA $$schem_ps **\n"; \
-			exit 1; \
-		fi; \
-	done
+%.pdf: %.sch
+	@echo -e "\n*** Convirtiendo $(@:.pdf=.ps) a pdf ***"; \
+	\
+	if [ -e "$(@:.pdf=.ps)" ];then \
+		ps2pdf -sPAPERSIZE=a4 $(@:.pdf=.ps); \
+		rm $(@:.pdf=.ps); \
+	else \
+		echo -e "** ACTUALIZA $(@:.pdf=.ps)**\n"; \
+		exit 1; \
+	fi;
 
 
 ################
